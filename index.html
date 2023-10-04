@@ -43,7 +43,7 @@
       </div>
     </header>
     <main>
-      <div class="catalog">
+      <div class="catalog" hidden>
         <div class="container catalog__container">
         <ul class="catalog__list">
           <li class="catalog__item"><a class="catalog__link" href="/catalog?slug=Диваны">Диваны</a></li>
@@ -59,7 +59,7 @@
         </ul>  
         </div>
       </div>
-      <div class="bradcrumb">
+      <div class="bradcrumb" hidden>
         <div class="container">
           <ul class="bradcrumb__list">
             <li class="bradcrumb__item">
@@ -77,7 +77,7 @@
           </ul>
         </div>
       </div>
-      <section class="goods hidden">
+      <section class="goods" hidden>
         <div class="container goods__container">
           <h2 class="goods__title">Избранное</h2>
           <div class="goods__list">
@@ -144,7 +144,7 @@
           </div>
         </div>
       </section>
-      <section class="product hidden">
+      <section class="product" hidden>
         <div class="container product__container">
           <h2 class="product__title">Кресло с подлокотниками</h2>
           <div class="product__picture">
@@ -266,7 +266,7 @@
           </div>
         </div>
       </section>
-      <section class="cart">
+      <section class="cart" hidden>
         <div class="container cart__container">
           <h2 class="cart__title">Корзина</h2>
           <ul class="cart__products">
@@ -339,6 +339,42 @@
               </label>   
             </fieldset>
           </form>
+        </div>
+      </section>
+      <section class="order">
+        <div class="container order__container">
+          <div class="order__header">
+            <h3 class="order__title">Заказ успешно размещен</h3>
+            <p class="order__price">20 000 ₽</p>
+            <p class="order__number">№43435</p>
+          </div>
+          <table class="order__characteristics-table">
+            <th class="order__title-table">Данные доставки</th>
+            <tr class="order__table-row">
+              <td class="order__table-field">Получатель</td>
+              <td class="order__table-value">Иванов Петр Александрович</td>
+            </tr>
+            <tr class="order__table-row">
+              <td class="order__table-field">Телефон</td>
+              <td class="order__table-value">+7 (737) 346 23 00</td>
+            </tr>
+            <tr class="order__table-row">
+              <td class="order__table-field">E-mail</td>
+              <td class="order__table-value">Ivanov84@gmail.com</td>
+            </tr>
+            <tr class="order__table-row">
+              <td class="order__table-field">Адрес доставки</td>
+              <td class="order__table-value">Москва, ул. Ленина, 21, кв. 33</td>
+            </tr>
+            <tr class="order__table-row">
+              <td class="order__table-field">Способ оплаты</td>
+              <td class="order__table-value">Картой при получении</td>
+            </tr>
+            <tr class="order__table-row">
+              <td class="order__table-field">Способ получения</td>
+              <td class="order__table-value">Доставка</td>
+            </tr>
+          </table>
         </div>
       </section>
     </main>
