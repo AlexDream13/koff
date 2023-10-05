@@ -1,0 +1,62 @@
+.order {
+  width: 320px;
+  padding: 24px 16px;
+  margin: auto;
+
+  &__container {
+  }
+
+  &__header {
+  }
+
+  &__title {
+    color: #1C1C1C;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+  }
+
+  &__price {
+  }
+
+  &__number {
+  }
+
+  &__characteristics-table {
+  }
+
+  &__title-table {
+  }
+
+  &__table-row {
+  }
+
+  &__table-field {
+  }
+
+  &__table-value {
+  }
+
+  &__button {
+    text-align: center;
+    &-btn {
+      border-radius: 32px;
+      border: 1px solid var(--violet, #780096);
+      background: var(--violet, #780096);
+      color: var(--btnText, #FFF);
+      text-align: center;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 120%;
+      display: flex;
+      width: 288px;
+      height: 38px;
+      padding: 12px 24px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+
+}
