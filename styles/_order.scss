@@ -12,17 +12,22 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-
   }
 
   &__price {
     color: #1C1C1C;
     font-size: 16px;
     font-weight: 400;
-
   }
 
-  &__number {}
+  &__number {
+    color: #1C1C1C;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+  }
 
   &__characteristics-table {}
 
