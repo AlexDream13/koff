@@ -1,18 +1,17 @@
 .order {
-  width: 320px;
-  padding: 24px 16px;
+
+  padding: 32px 0;
   margin: auto;
-  border-radius: 16px;
-  border: 1px solid var(--form);
-  border: 1px solid var(--violet);
 
   &__container {
-    border: 1px solid #f0f;
-    padding: 0;
+    max-width: 320px;
+    border-radius: 16px;
+    border: 1px solid var(--form);
+    padding: 24px 16px;
   }
 
   &__header {
-    border: 1px solid #f0f;
+
   }
 
   &__title {
@@ -36,26 +35,28 @@
   }
   &__characteristics-table {
     width: 100%;
+    margin-top: 24px;
   }
 
-  &__title-table {
+  .table__title {
     color: #1C1C1C;
     font-size: 16px;
     font-weight: 400;
     text-align: left;
   }
 
-  &__table-row {
+  .table__row {
+    margin-top: 8px;
   }
 
-  &__table-field {
+  .table__field {
     color: #969EAE;
     font-size: 12px;
     font-weight: 400;
     white-space: nowrap;
   }
 
-  &__table-value {
+  .table__value {
     color: #1C1C1C;
     text-align: right;
     font-size: 12px;
@@ -63,9 +64,8 @@
  }
 
   &__button {
-    border: 1px solid #000;
     margin-top: 24px;
-
+    box-sizing: border-box;
     &-btn {
       border-radius: 32px;
       border: 1px solid var(--violet, #780096);
@@ -81,8 +81,13 @@
       padding: 12px 24px;
       justify-content: center;
       align-items: center;
+      &:hover, &:focus-visible{
+        background: #9200B7;
+      }
+      &:active{
+        background-color: var(--violet);
+        border: 1px solid #C0F;
+     }
     }
   }
-
-
 }
