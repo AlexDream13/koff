@@ -1,6 +1,8 @@
 .catalog {
   overflow-x: hidden;
   padding-top: 24px;
+  padding-bottom: 32px;
+  border: 1px solid #ccc;
   @media (min-width: 580px){
     padding-top: 32px;
   }
@@ -32,7 +34,9 @@
   }
 }
 .catalog__link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 32px;
   border: 1px solid transparent;
   background-color: var(--form);

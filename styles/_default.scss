@@ -3,6 +3,12 @@
   --btnText: #fff;
   --btnHover: #9200B7;
   --form: #eeeff2;
+  --title: #1C1C1C;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 38.4px */
 }
 html {
   position: relative;
@@ -33,6 +39,10 @@ body {
 }
 main{
 flex-grow: 1;
+  padding-bottom: 80px;
+  @media (min-width: 580px){
+    padding-bottom: 100px;
+  }
 }
 img,
 svg {
@@ -80,7 +90,7 @@ iframe {
 
 .container {
   max-width: 1286px;
-  padding: 0 30px;
+  padding: 0 16px;
   margin: 0 auto;
   @media (min-width: 580px){
     padding: 0 29px;
