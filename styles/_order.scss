@@ -8,10 +8,9 @@
     border-radius: 16px;
     border: 1px solid var(--form);
     padding: 24px 16px;
-  }
-
-  &__header {
-
+    @media (min-width: 580px){
+      max-width: 580px;
+    }
   }
 
   &__title {
