@@ -40,8 +40,17 @@
       justify-self: end;
     }
   }
-
+  .contacts__phone{
+    display: flex;
+    gap: 4px;
+  }
+  .contacts__list{
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+  }
   &__developer-list {
+
     @media (min-width: 580px) {
       grid-column: 1/2;
     }
