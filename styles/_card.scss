@@ -1,22 +1,24 @@
 .card {
   position: relative;
-
+  height: 100%;
   &__link_img {
     width: 100%;
+    height: auto;
     display: block;
     margin-bottom: 12px;
     border-radius: 16px;
 
     @media (min-width: 580px){
       margin-bottom: 16px;
+
     }
   }
   &__image {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 16px;
+    aspect-ratio: 151/125;
   }
   &__info{
     @media (min-width: 580px){

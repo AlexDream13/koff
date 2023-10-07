@@ -150,6 +150,7 @@
   }
 
   &__btn {
+    position: relative;
     flex-grow: 1;
     padding: 12px 24px;
     color: #fff;
@@ -167,6 +168,7 @@
   }
 
   &__like {
+
     width: 16px;
     height: 16px;
   }
