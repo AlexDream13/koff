@@ -1,5 +1,6 @@
 import 'normalize.css';
 import './style.scss';
+import Navigo from 'navigo';
 
 const productSlider = () => {
   Promise.all([
@@ -26,4 +27,13 @@ const productSlider = () => {
     });
   })
 }
-productSlider();
+
+const init = () => {
+  productSlider();
+  const router = new Navigo("/", {linksSelector: "a[href^='/']"});
+  router
+  .on("/", () => {})
+  .on("/", () => {})
+  .on("/", () => {})
+}
+init();
