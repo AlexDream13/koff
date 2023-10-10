@@ -1,6 +1,7 @@
 import 'normalize.css';
 import './style.scss';
 import Navigo from 'navigo';
+import { Header } from './modules/Header/Header';
 
 const productSlider = () => {
   Promise.all([
@@ -29,11 +30,19 @@ const productSlider = () => {
 }
 
 const init = () => {
+  new Header().mount();
+   
   productSlider();
   const router = new Navigo("/", {linksSelector: "a[href^='/']"});
   router
-  .on("/", () => {})
-  .on("/", () => {})
-  .on("/", () => {})
+  .on("/", () => {console.log('на главной')})
+  .on("/category", () => {console.log('category')})
+  .on("/favorite", () => {console.log('favorite')})
+  .on("/product/:id", (obj) => {console.log('obj: ', obj)})
+  .on("/search", () => {console.log('serch')})
+  .on("/cart", () => {console.log('cart')})
+  .on("/order", () => {console.log('order')})
+  .notFound(() => {console.log(404)})
+  router.resolve();
 }
 init();
