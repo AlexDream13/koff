@@ -3,6 +3,7 @@ import './style.scss';
 import Navigo from 'navigo';
 import { Header } from './modules/Header/Header';
 import { Main } from './modules/Main/Main';
+import { Order } from './modules/Main/Order';
 import { Footer } from './modules/Footer/Footer';
 
 const productSlider = () => {
@@ -34,6 +35,7 @@ const productSlider = () => {
 const init = () => {
   new Header().mount();
   new Main().mount();
+  new Order().mount();
   new Footer().mount();
    
   productSlider();
