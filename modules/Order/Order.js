@@ -14,7 +14,7 @@ export class Order{
     return Order.instance;
   }
   
-  mount(){
+  mount(main){
     if(this.isMounted){
       return;
     }

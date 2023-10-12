@@ -25,19 +25,20 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, 140px);
+    justify-content: space-evenly;
     gap: 50px 8px;
     margin-bottom: 32px;
     @media (min-width: 495px){
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      grid-template-columns: repeat(auto-fit,190px);
       margin-bottom: 40px;
     }
     @media (min-width: 580px){
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit,230px);
       gap: 65px 10px;
     }
     @media (min-width: 820px){
-      grid-template-columns: repeat(auto-fit, minmax(302px, 1fr));
+      grid-template-columns: repeat(auto-fit, 302px);
       gap: 81px 16px;
     }
     &:last-child{
