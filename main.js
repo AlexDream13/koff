@@ -3,7 +3,7 @@ import './style.scss';
 import Navigo from 'navigo';
 import { Header } from './modules/Header/Header';
 import { Main } from './modules/Main/Main';
-import { Order } from './modules/Main/Order';
+import { Order } from './modules/Order/Order';
 import { Footer } from './modules/Footer/Footer';
 
 const productSlider = () => {
@@ -35,7 +35,6 @@ const productSlider = () => {
 const init = () => {
   new Header().mount();
   new Main().mount();
-  new Order().mount();
   new Footer().mount();
    
   productSlider();
@@ -47,7 +46,10 @@ const init = () => {
   .on("/product/:id", (obj) => {console.log('obj: ', obj)})
   .on("/search", () => {console.log('serch')})
   .on("/cart", () => {console.log('cart')})
-  .on("/order", () => {console.log('order')})
+  .on("/order", () => {
+    new Order().mount(new Main().sectionOrder);
+    console.log('sectionOrder');
+  })
   .notFound(() => {console.log(404)})
   router.resolve();
 }

@@ -1,13 +1,13 @@
 import {addContainer} from "../addContainer";
-import { Main } from './Main';
+import { Main } from '../Main/Main';
 export class Order{
   static instance = null;
   constructor(){
     if(!Order.instance){
       Order.instance = this;
-      this.element = document.createElement('section');
-      this.element.classList.add('order');
-      this.containerElement = addContainer(this.element, "order__container");
+      this.sectionOrder = document.createElement('section');
+      this.sectionOrder.classList.add('order');
+      this.containerElement = addContainer(this.sectionOrder, "order__container");
       this.isMounted = false;
     }
     
@@ -18,14 +18,13 @@ export class Order{
     if(this.isMounted){
       return;
     }
-    const main = document.querySelector('main');
+    
     const orderHeader = this.getOrderHeader();
     const table = this.getTable();
     const orderButton = this.getOrderButton();
 
-
     this.containerElement.append(orderHeader,table,orderButton);
-    main.append(this.element);
+    main.append(this.sectionOrder);
     this.isMounted = true;
   }
   unmount(){
