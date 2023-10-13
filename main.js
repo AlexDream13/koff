@@ -6,6 +6,7 @@ import { Main } from './modules/Main/Main';
 import { Order } from './modules/Order/Order';
 import { Footer } from './modules/Footer/Footer';
 import { ProductList } from './modules/Product/ProductList';
+import {ApiService} from "./modules/services/ApiService.js";
 
 const productSlider = () => {
   Promise.all([
@@ -34,15 +35,18 @@ const productSlider = () => {
 }
 
 const init = () => {
+  const api = new ApiService();
   new Header().mount();
   new Main().mount();
   new Footer().mount();
    
   productSlider();
   const router = new Navigo("/", {linksSelector: "a[href^='/']"});
+
   router
-  .on("/", () => {
-    new ProductList().mount(new Main().element, [1,2,3,4]);
+  .on("/", async () => {
+    const product = await api.getProducts();
+    new ProductList().mount(new Main().element, product);
     },
       {
       before(done){
@@ -81,7 +85,7 @@ const init = () => {
   },  
   )
   .on("/product/:id", (obj) => {console.log('obj: ', obj)})
-  .on("/search", () => {console.log('serch')})
+  .on("/search", () => {console.log('search')})
   .on("/cart", () => {console.log('cart')})
   .on("/order", () => {
     new Order().mount(new Main().element);
