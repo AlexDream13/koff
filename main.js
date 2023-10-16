@@ -7,6 +7,7 @@ import { Order } from './modules/Order/Order';
 import { Footer } from './modules/Footer/Footer';
 import { ProductList } from './modules/Product/ProductList';
 import {ApiService} from "./modules/services/ApiService.js";
+import {Catalog} from "./modules/Catalog/Catalog.js";
 
 const productSlider = () => {
   Promise.all([
@@ -36,29 +37,27 @@ const productSlider = () => {
 
 const init = () => {
   const api = new ApiService();
+  const router = new Navigo("/", {linksSelector: "a[href^='/']"});
   new Header().mount();
   new Main().mount();
   new Footer().mount();
+
+  api.getProductCategories().then(data => {
+    new Catalog().mount(new Main().element,data);
+    router.updatePageLinks();
+  });
    
   productSlider();
-  const router = new Navigo("/", {linksSelector: "a[href^='/']"});
 
   router
   .on("/", async () => {
     const product = await api.getProducts();
     new ProductList().mount(new Main().element, product);
+    router.updatePageLinks();
     },
-      {
-      before(done){
-        console.log('before');
-        
-        done();
-      },
-      after(){
-        console.log('after');
-      },
-      leave(done){
-        
+{
+    leave(done){
+        new ProductList().unmount();
         done();
       },
       already(){
@@ -66,20 +65,26 @@ const init = () => {
       }
     }
   )
-  .on("/category", () => {
-    new ProductList().mount(new Main().element, [1,2,3,4,5,6], 'Категория');
+  .on("/category", async ({params: {slug}}) => {
+    const product = await  api.getProducts();
+    new ProductList().mount(new Main().element, product, slug);
+        router.updatePageLinks();
   },
   {
    leave(done){
+     new ProductList().unmount();
       done();
     },
   },
   )
-  .on("/favorite", () => {
-    new ProductList().mount(new Main().element, [1,2], 'Избранное');
+  .on("/favorite", async () => {
+        const product = await  api.getProducts();
+    new ProductList().mount(new Main().element, product, 'Избранное');
+        router.updatePageLinks();
   },
   {
    leave(done){
+     new ProductList().unmount();
       done();
     },
   },  

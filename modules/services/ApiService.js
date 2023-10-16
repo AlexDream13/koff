@@ -21,7 +21,7 @@ export class ApiService {
     }
     async getData(pathname, params = {}){
         if(!this.accessKey){
-            await this.accessKey;
+            await this.getAccessKey();
         }
         try{
             const response = await axios.get(`${this.#apiUrl}${pathname}`,{
@@ -47,4 +47,11 @@ export class ApiService {
             page, limit, list, category, q,
         });
    }
+
+   async getProductCategories(){
+        return await this.getData("api/productCategories");
+    }
+    async getProductById(id){
+        return await this.getData(`api/products/${id}`);
+    }
 }

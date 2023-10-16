@@ -2,7 +2,7 @@
   overflow-x: hidden;
   padding-top: 24px;
   padding-bottom: 32px;
-  border: 1px solid #ccc;
+  //border: 1px solid #ccc;
   @media (min-width: 580px){
     padding-top: 32px;
   }
@@ -43,6 +43,7 @@
   padding: 8px 14px 10px 14px;
   color: #969eae;
   outline: none;
+  white-space: nowrap;
   &:hover, &:focus-visible{
     border-color: var(--violet);
     color: var(--violet);

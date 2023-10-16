@@ -50,7 +50,7 @@ unmount(){
     listElem.append(...listItems);
     this.containerElement.append(listElem);
   };
-  getHTMLTemplateListItem(id, images: [image], name: title, price){
+  getHTMLTemplateListItem({id, images: [image], name: title, price}){
     return `<article class="goods__card card">
     <a class="card__link card__link_img" href="/product/${id}">
       <img class="card__image" src="${API_URL}${image}" alt="${title}">
