@@ -84,8 +84,14 @@ border-bottom: 1px solid #eeeff2;
     flex-direction: row-reverse;
     align-items: center;
     gap: 4px;
+    svg{
+      fill: #fff;
+    }
     &:hover, &:active{
       color: var(--violet);
+      svg{
+        fill: var(--violet);
+      }
     }
     &:focus-visible{
       color: var(--violet);

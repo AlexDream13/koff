@@ -1,4 +1,6 @@
 import {API_URL} from "../../const.js";
+import {CartButton} from "../CartButton/CartButton.js";
+import {LikeButton} from "../LikeButton/LikeButton.js";
 
 export class Card {
     constructor({id,image,title,price}) {
@@ -6,6 +8,8 @@ export class Card {
         this.image = image;
         this.title = title;
         this.price = price;
+        this.cartButton = new CartButton('card__btn','В корзину');
+        this.likeButton = new LikeButton('card__favorite');
     }
     create(){
         const article = document.createElement('article');
@@ -37,11 +41,12 @@ export class Card {
         price.innerHTML = `${this.price.toLocaleString()}&nbsp;р`;
         cardInfo.append(title,price);
 
-        const btnCart = '';
-        const btnFavorite = '';
+        const btnCart = this.cartButton.create(this.id);
+        const btnFavorite = this.likeButton.create(this.id);
 
-        article.append(link, cardInfo);
-
+        article.append(link, cardInfo,btnCart,btnFavorite);
+        return article;
+        // https://my.methed.ru/pl/teach/control/lesson/view?id=307647363&editMode=0 26:48
     }
 
 }
