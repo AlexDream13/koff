@@ -1,5 +1,7 @@
 import {addContainer} from "../addContainer";
-import logoIMG from "/img/logo.svg";
+import {Logo} from "../features/Logo/Logo.js";
+
+
 
 export class Footer{
   static instance = null;
@@ -18,7 +20,7 @@ export class Footer{
     if(this.isMounted){
       return;
     }
-    const logo = this.getLogo();
+    const logo = new Logo('footer').create();
     this.containerElement.append(logo);
     this.containerElement.insertAdjacentHTML('beforeend', this.getHTML());
     document.body.append(this.element);
@@ -30,18 +32,7 @@ export class Footer{
   }
   
 
-  getLogo(){
-    const logo = document.createElement('a');
-    logo.classList.add('footer__link-logo');
-    logo.href = '/';
 
-    const imgLogo = document.createElement('img');
-    imgLogo.classList.add('footer__logo');
-    imgLogo.src= logoIMG;
-    imgLogo.alt = "Логотип магазина кофф";
-    logo.append(imgLogo);
-    return logo;
-  };
   getHTML(){
     return `<div class="footer__contacts contacts">
     <a class="contacts__phone" href="tel:+79398391297">

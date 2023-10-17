@@ -1,5 +1,6 @@
 import {addContainer} from "../addContainer";
-import logoIMG from "/img/logo.svg";
+import {Logo} from "../features/Logo/Logo.js";
+
 export class Header{
   static instance = null;
   constructor(){
@@ -18,7 +19,7 @@ export class Header{
       return;
     }
     
-    const logo = this.getLogo();
+    const logo = new Logo('header').create();
     const searchForm = this.getSearchForm();
     const navigation = this.getNavigation();
 
@@ -30,19 +31,7 @@ export class Header{
     this.element.remove();
     this.isMounted = false;
   }
-  getLogo(){
-    const logo = document.createElement('a');
-    logo.classList.add('header__link-logo');
-    logo.href = '/';
 
-    const imgLogo = document.createElement('img');
-    imgLogo.classList.add('header__logo');
-    imgLogo.src= logoIMG;
-    imgLogo.alt = "Логотип магазина кофф";
-    logo.append(imgLogo);
-    return logo;
-     
-  };
   getSearchForm(){
     const searchForm = document.createElement('form');
     searchForm.classList.add('header__search');

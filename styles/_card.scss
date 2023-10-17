@@ -66,11 +66,38 @@
     color: var(--violet);
     border-radius: 32px;
     border: 1px solid var(--violet);
+    transition: all 0.3s;
+    &:hover{
+      color: var(--btnText);
+      border-color: var(--btnHover);
+      background-color: var(--btnHover);
+    }
+    &:active{
+      color: var(--btnActive);
+      border-color: var(--btnActive);
+      background-color: transparent;
+    }
   }
 
   &__favorite {
     position: absolute;
     top: 12px;
     right: 12px;
+    svg{
+      fill: #fff;
+
+    }
+    &:hover, &_active{
+      color: var(--btnHover);
+      svg{
+        fill: var(--btnHover);
+      }
+    }
+    &:active{
+      color: var(--btnActive);
+      svg{
+        fill: var(--btnActive);
+      }
+    }
   }
 }
