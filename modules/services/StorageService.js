@@ -1,9 +1,9 @@
-class StorageService{
+export class StorageService{
     constructor(key){
         this.key = key;
-    }
+        }
     get(){
-        const value = localStorage(this.key);
+        const value = localStorage.getItem(this.key);
         if(value){return value;}
         return null;
     }
@@ -50,7 +50,7 @@ export class FavoriteService extends StorageService{
         return false;
     }
     check(value){
-        this.favorite.has(value);
+        return this.favorite.has(value);
     }
 }
 
@@ -61,6 +61,6 @@ export class AccessKeyService extends StorageService{
             super(key);
             AccessKeyService.instance = this;
         }
-    return AccessKeyService;
+    return AccessKeyService.instance;
     }
 }

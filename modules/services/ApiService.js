@@ -8,6 +8,7 @@ export class ApiService {
     constructor() {
         this.accessKeyService = new AccessKeyService('accessKey');
         this.accessKey = this.accessKeyService.get();
+        console.log("this.accessKey: ", this.accessKey);
 
     }
     async getAccessKey(){
@@ -31,7 +32,7 @@ export class ApiService {
                     Authorization: `Bearer ${this.accessKey}`,
                 },
                 params,
-            })
+            });
             return response.data;
         }catch (error){
             if(error.response && error.response.status === 401){
