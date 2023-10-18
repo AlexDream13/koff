@@ -46,7 +46,6 @@ export class Card {
 
         article.append(link, cardInfo,btnCart,btnFavorite);
         return article;
-        // https://my.methed.ru/pl/teach/control/lesson/view?id=307647363&editMode=0 26:48
     }
 
 }
